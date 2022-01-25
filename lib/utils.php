@@ -5,20 +5,20 @@
 
 function g($array, $key, $default = false)
 {
-    if (is_array($array)) {
-        if (is_array($key) && count($key) > 0) {
-            if (count($key) == 1) {
-                return g($array, $key[0], $default);
-            } else {
-                $first = array_shift($key);
+  if (is_array($array)) {
+    if (is_array($key) && count($key) > 0) {
+      if (count($key) == 1) {
+        return g($array, $key[0], $default);
+      } else {
+        $first = array_shift($key);
 
-                return array_key_exists($first, $array) && is_array($array[$first]) ?
+        return array_key_exists($first, $array) && is_array($array[$first]) ?
                 g($array[$first], $key, $default) : $default;
-            }
-        } else {
-            return array_key_exists($key, $array) ? $array[$key] : $default;
-        }
+      }
     } else {
-        throw new Exception("Can't get [$key] in non-array [$array]");
+      return array_key_exists($key, $array) ? $array[$key] : $default;
     }
+  } else {
+    throw new Exception("Can't get [$key] in non-array [$array]");
+  }
 }
