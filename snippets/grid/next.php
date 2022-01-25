@@ -9,7 +9,5 @@ $state = urlencode(serialize($grid));
   <input type="hidden"
          name="state"
          value="<?= $state ?>"/>
-<input type="submit" value="Next"
-/>
-
-          </form>
+  <input type="submit" value="Next"/>
+</form>

@@ -15,7 +15,6 @@ body {
   padding: 0px;
 }
 
-
 .page {
 }
 
@@ -29,7 +28,9 @@ table {
 }
 
 table td {
-  border: 1px solid #222;
-  text-align: center;
-  padding: .5em;
+border: 1px solid #222;
+text-align: center;
+width: 4em;
+  height:
+    4em;
 }
