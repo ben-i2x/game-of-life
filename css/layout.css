@@ -1,0 +1,12 @@
+/*
+ * A CSS file for laying out our web app
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  border: 1px solid #222;
+  text-align: center;
+}
