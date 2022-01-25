@@ -5,11 +5,12 @@
 
 require_once __DIR__.'/lib/config.php';
 
-if(($s = g($_POST, 'state'))) {
-  $grid = unserialize(urldecode($s)); $grid = conway_evolve($grid);
-
-} 
-else { $grid = conway_new(30, 20); }
+if (($s = g($_POST, 'state'))) {
+  $grid = unserialize(urldecode($s));
+  $grid = conway_evolve($grid);
+} else {
+  $grid = conway_new(30, 20);
+}
 
 start_snippet('shell');
 ?>

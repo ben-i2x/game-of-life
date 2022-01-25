@@ -6,8 +6,7 @@
 <h1>
   Generation: <?= $grid['generation'] ?>
 
-  <?= snippet('grid/next', ['grid' =>
-  $grid])?>
+  <?= snippet('grid/next', ['grid' => $grid])?>
 </h1>
 
 <table class="grid">

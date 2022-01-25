@@ -44,45 +44,47 @@ function conway_index($grid, $x, $y)
   return ($y * $w) + $x;
 }
 
-function conway_supported($grid, $x, $y) {
+function conway_supported($grid, $x, $y)
+{
   $living = 0;
-  for($xo = -1; $xo <= 1; $xo++) {
-    for($yo = -1; $yo <= 1; $yo++) {
-      if($xo != 0 && $yo != 0) {
-        $i = conway_index($grid, $x + $xo, $y +$yo);
-        if($grid['data'][$i]) {
-
-
+  for ($xo = -1; $xo <= 1; $xo++) {
+    for ($yo = -1; $yo <= 1; $yo++) {
+      if ($xo != 0 && $yo != 0) {
+        $i = conway_index($grid, $x + $xo, $y + $yo);
+        if ($grid['data'][$i]) {
           $living += 1;
-          
-
         }
-  }
-  }
+      }
+    }
   }
 
-  return ($living == 2 or $living == 3);
+  return $living == 2 or $living == 3;
 }
 
 function conway_evolve($grid)
 {
   $next = [];
-  for($y = 0; $y < $grid['height']; $y++) {
-    for($x = 0; $x < $grid['width']; $x++) {
+  for ($y = 0; $y < $grid['height']; $y++) {
+    for ($x = 0; $x < $grid['width']; $x++) {
       $i = conway_index($grid, $x, $y);
-      if($grid['data'][$i] == 1) {
-        if(conway_supported($grid, $x, $y))
+      if ($grid['data'][$i] == 1) {
+        if (conway_supported($grid, $x, $y)) {
           $next[$i] = 1;
-        else
+        } else {
           $next[$i] = 0;
+        }
       } else {
-        if(conway_supported($grid, $x, $y))
+        if (conway_supported($grid, $x, $y)) {
           $next[$i] = 1;
-        else 
+        } else {
           $next[$i] = 0;
+        }
       }
     }
   }
 
-  $grid['data'] = $next;$grid['generation']++; return $grid;
+  $grid['data'] = $next;
+  $grid['generation']++;
+
+  return $grid;
 }
