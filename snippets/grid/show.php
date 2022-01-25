@@ -3,7 +3,12 @@
  * A PHP file for printing out a board of data
  */
 ?>
-<h1>Generation: <?= $grid['generation'] ?></h1>
+<h1>
+  Generation: <?= $grid['generation'] ?>
+
+  <?= snippet('grid/next', ['grid' =>
+  $grid])?>
+</h1>
 
 <table class="grid">
   <?php for ($y = 0; $y < $grid['height']; $y++) { ?>
