@@ -9,10 +9,7 @@ if (($s = g($_POST, 'state'))) {
   $grid = unserialize(urldecode($s));
   $grid = conway_evolve($grid);
 } else {
-  $grid = conway_new(
-    10,
-    10
-  );
+  $grid = conway_new(10,10);
 }
 
 start_snippet('shell');

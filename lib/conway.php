@@ -5,7 +5,7 @@
 
 function conway_new($width, $height)
 {
-  $data = [];
+  $data = array();
   for ($i = 0; $i < ($width * $height); $i++) {
     $data[] = (rand(0, 100) < 20) ? 1 : 0;
   }
@@ -63,7 +63,7 @@ function conway_supported($grid, $x, $y)
 
 function conway_evolve($grid)
 {
-  $next = [];
+  $next = array();
   for ($y = 0; $y < $grid['height']; $y++) {
     for ($x = 0; $x < $grid['width']; $x++) {
       $i = conway_index($grid, $x, $y);
