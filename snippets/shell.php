@@ -15,6 +15,8 @@
   </head>
 
   <body>
-    <?= $body ?>
+    <div class="page">
+      <?= $body ?>
+    </div>
   </body>
 </html>

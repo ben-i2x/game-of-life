@@ -9,7 +9,6 @@ $grid = conway_new(30, 20);
 
 start_snippet('shell');
 ?>
-
 <?= snippet('grid/show', ['grid' => $grid])?>
 
 
