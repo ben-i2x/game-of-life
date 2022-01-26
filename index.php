@@ -12,8 +12,9 @@ if (($s = g($_POST, 'state'))) {
   $grid = conway_new(10, 10);
 }
 
-if(empty($grid)) throw new Exception("Broken!");
-
+if (empty($grid)) {
+  throw new Exception('Broken!');
+}
 
 start_snippet('shell');
 ?>
