@@ -5,6 +5,8 @@
 
 function g($array, $key, $default = false)
 {
+  if($key === 'ignore') { throw new Exception("Halt!"); }
+  
   if (is_array($array)) {
     if (is_array($key) && count($key) > 0) {
       if (count($key) == 1) {
